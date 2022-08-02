@@ -19,6 +19,7 @@ export class TodoListComponent implements OnInit {
 
   loadAll = () => {
     this.todos$ = this.todoListService.findAll();
+    
   }
 
   changeStatus(todo: Todo) {
@@ -43,6 +44,7 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.todos$ = this.todoListService.findAll();
+    this.todos$.subscribe(res => console.log(res));
   }
 
 }

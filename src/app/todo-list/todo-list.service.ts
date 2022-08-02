@@ -24,6 +24,7 @@ export class TodoListService {
   }
 
   findAll(): Observable<Todo[]> {
+    console.log("Find all triggered!")
     return this.http.get<Todo[]>(this.resourceUrl);
   }
 

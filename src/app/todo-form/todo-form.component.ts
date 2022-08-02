@@ -10,6 +10,7 @@ export class TodoFormComponent implements OnInit {
   validateForm!: FormGroup;
 
   submitForm(value: {title:string, completed:boolean}): void {
+    console.log("Submitting...")
     for(const key in this.validateForm.controls){
       if(this.validateForm.controls.hasOwnProperty(key)){
         this.validateForm.controls[key].markAsDirty();
