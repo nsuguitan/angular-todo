@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import {ButtonModule} from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
+
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoListService } from './todo-list/todo-list.service';
@@ -24,6 +26,7 @@ import { TodoListService } from './todo-list/todo-list.service';
     FormsModule,
     HttpClientModule,
     ButtonModule,
+    InputTextModule
   ],
   providers: [TodoListService],
   bootstrap: [AppComponent]
