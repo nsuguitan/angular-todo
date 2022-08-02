@@ -16,6 +16,7 @@ import {PanelModule} from 'primeng/panel';
 import {DataViewModule} from 'primeng/dataview';
 import { TagModule } from 'primeng/tag';
 import {ListboxModule} from 'primeng/listbox';
+import {InputSwitchModule} from 'primeng/inputswitch';
 
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
@@ -41,7 +42,8 @@ import { TodoListService } from './todo-list/todo-list.service';
     PanelModule,
     DataViewModule,
     TagModule,
-    ListboxModule
+    ListboxModule,
+    InputSwitchModule
     ],
   providers: [MessageService,TodoListService],
   bootstrap: [AppComponent]

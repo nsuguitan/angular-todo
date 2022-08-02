@@ -1,7 +1,10 @@
 <div class="card">
     <ng-container *ngIf="todos$ | async as data">
         <h1>Angular demo Todos</h1>
-        <app-todo-form></app-todo-form>
+        <div class="messages-container">
+            <p-messages></p-messages>
+        </div>
+        <app-todo-form [refresh]="this.loadAll"></app-todo-form>
         <!-- <p-listbox [options]="data" optionLabel="title" optionValue="This is a test"></p-listbox> -->
         <p-dataView
         #dv
@@ -9,14 +12,19 @@
         [paginator]="true"
         [rows]="3"
         layout="grid">
-        <ng-template *ngFor="let todo of data" pTemplate="gridItem">
-          <div class="p-col-12 p-md-4">
-            <p-tag styleClass="p-mr-2" value="Primary">{{todo.title}}</p-tag>
-            <div >
-                DataView Component Item
+        <ng-template ngFor let-todo [ngForOf]="data" pTemplate="gridItem">
+            <div class="p-col-12 p-md-4">
+              <ul class="no-bullets">
+                <li>
+                    <p-tag styleClass="p-mr-2">{{todo.title}}</p-tag>
+                </li>
+                <li>  
+                    <p-inputSwitch [(ngModel)]="todo.completed" (onChange)="changeStatus(todo)"></p-inputSwitch>
+                    <button pButton type="button" icon="pi pi-trash" iconPos="left" class="p-button-sm" (click)="deleteTodo(todo)"></button>
+                </li>
+              </ul>
             </div>
-          </div>
-        </ng-template>
+          </ng-template>
       </p-dataView>
 
     </ng-container>

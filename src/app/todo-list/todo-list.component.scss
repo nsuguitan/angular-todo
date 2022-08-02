@@ -1,0 +1,15 @@
+ul.no-bullets {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+    display: flex;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
+    padding:3px 4px;
+  }
+
+  .messages-container{
+    height:100px;
+  }
