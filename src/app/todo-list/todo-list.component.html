@@ -1,1 +1,20 @@
-<p>todo-list works!</p>
+<div class="card">
+    <p-dataView
+      #dv
+      [paginator]="true"
+      [rows]="10"
+      layout="grid">
+      <ng-template *ngFor="let todo of todos$ | async" pTemplate="gridItem">
+        <div class="p-col-12 p-md-4">
+          <div class="todo-grid-item card">
+            <div class="todo-grid-item-top">
+                <p-tag styleClass="p-mr-2" value="Primary">{{todo.title}}</p-tag>
+            </div>
+            <div class="todo-grid-item-content">
+              DataView Component Item
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-dataView>
+  </div>

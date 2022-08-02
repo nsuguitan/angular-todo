@@ -1,7 +1,7 @@
 <div class="grid p-fluid">
     <div class="p-col-12 p-md-4">
         <h1>Form</h1>
-        <form class="p-inputgroup" formGroup="validateForm" (ngSubmit)="submitForm(validateForm.value)" >
+        <form class="p-inputgroup" [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)" >
             <input formControlName="title" placeholder="Todo"/>
             <button pButton type="button" label="Add" [disabled]="!validateForm.valid"></button>
         </form>
