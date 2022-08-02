@@ -1,9 +1,10 @@
 <div class="card">
+    <div class="messages-container">
+        <p-messages></p-messages>
+    </div>
     <ng-container *ngIf="todos$ | async as data">
         <h1>Angular demo Todos</h1>
-        <div class="messages-container">
-            <p-messages></p-messages>
-        </div>
+        
         <app-todo-form [refresh]="this.loadAll"></app-todo-form>
         <!-- <p-listbox [options]="data" optionLabel="title" optionValue="This is a test"></p-listbox> -->
         <p-dataView
