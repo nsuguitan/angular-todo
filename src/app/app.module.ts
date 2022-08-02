@@ -8,6 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
+import {Component} from '@angular/core';
+import {MessageService} from 'primeng/api';
+import { MessagesModule } from "primeng/messages";
+import { MessageModule } from "primeng/message";
 
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
@@ -26,7 +30,11 @@ import { TodoListService } from './todo-list/todo-list.service';
     FormsModule,
     HttpClientModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    Component,
+    MessageService,
+    MessagesModule,
+    MessageModule,
   ],
   providers: [TodoListService],
   bootstrap: [AppComponent]
